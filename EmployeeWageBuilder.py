@@ -1,9 +1,9 @@
 '''
 @Author : Priyanka
-@Date : 2022-04-02  17:25:00
+@Date : 2022-04-04  17:40:00
 @Last Modified by : Priyanka
-@Last Modified Time : 2022-04-02  17:35:00
-@Title : Calculate employee wage based on their shift using switch case statement.
+@Last Modified Time : 2022-04-04  18:00:00
+@Title : Calculate employee wage for a month.
 '''
 
 import random
@@ -13,6 +13,9 @@ print("Welcome to the employee wage computation program")
 fullDayEmpHours = 8
 halfDayEmpHours = 4
 EMP_RATE_PER_HOUR = 20
+NUM_OF_WORKING_DAYS = 20
+totalEmpWage = 0
+totalWorkingDays= 0
 
 
 def empFullDayWage():
@@ -72,13 +75,15 @@ def empwageCalculate(randomCheck):
     }
     return switcher[randomCheck]
 
-empCheck = random.randint(0, 1)
-employeeWage = empPresentyCheck(empCheck)
+while(totalWorkingDays < NUM_OF_WORKING_DAYS ):
+    empCheck = random.randint(0, 1)
+    employeeWage = empPresentyCheck(empCheck)
+    if empCheck == 0:
+        (employeeWage)
+    else:
+        (employeeWage[0])
+        (employeeWage[1])
+        totalEmpWage += employeeWage[1]
+        totalWorkingDays += 1
 
-if empCheck == 0:
-    print(employeeWage)
-else:
-    print(employeeWage[0])
-    print(employeeWage[1])
-
-
+print("Total employee wage for {} days is {}".format(totalWorkingDays,totalEmpWage))
