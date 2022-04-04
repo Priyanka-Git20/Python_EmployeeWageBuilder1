@@ -14,7 +14,6 @@ fullDayEmpHours = 8
 halfDayEmpHours = 4
 EMP_RATE_PER_HOUR = 20
 NUM_OF_WORKING_DAYS = 20
-UM_OF_WORKING_DAYS = 20
 MAX_HOURS_IN_MONTH = 100
 totalWorkingDays= 0
 totalEmpHours= 0
