@@ -1,9 +1,9 @@
 '''
 @Author : Priyanka
-@Date : 2022-04-04  18:40:00
+@Date : 2022-04-04  19:00:00
 @Last Modified by : Priyanka
-@Last Modified Time : 2022-04-04  19:00:00
-@Title :Store the daily wage along with the total wage.
+@Last Modified Time : 2022-04-04  19:15:00
+@Title :Store the day and daily wage along with the total wage.
 '''
 
 import random
@@ -15,7 +15,7 @@ halfDayEmpHours = 4
 EMP_RATE_PER_HOUR = 20
 NUM_OF_WORKING_DAYS = 20
 dailyWage = []
-
+days = []
 
 def empFullDayWage():
     """
@@ -103,10 +103,12 @@ def totalWorkingHours():
             dailyWage.append(employeeWage[1])
             totalEmpHours += employeeWage[2]
             totalWorkingDays += 1
+            days.append(totalWorkingDays)
+
+    print("Days = ", days)
     print("Total working days is", totalWorkingDays)
     print("Total employee wage for {} days is {}".format(totalWorkingDays, totalEmpWage))
     print("Daily employee wage is", dailyWage)
     return totalEmpHours
-
 
 print("Total Employee working Hours in a month is", totalWorkingHours())
