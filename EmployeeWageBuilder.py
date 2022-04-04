@@ -1,9 +1,9 @@
 '''
 @Author : Priyanka
-@Date : 2022-04-04  18:05:00
+@Date : 2022-04-04  18:27:00
 @Last Modified by : Priyanka
-@Last Modified Time : 2022-04-04  18:25:00
-@Title : Calculate Wages till a condition of total working hours or days is reached for a month.
+@Last Modified Time : 2022-04-04  18:40:00
+@Title : Refactor the code to write function to get working hours.
 '''
 
 import random
@@ -14,11 +14,6 @@ fullDayEmpHours = 8
 halfDayEmpHours = 4
 EMP_RATE_PER_HOUR = 20
 NUM_OF_WORKING_DAYS = 20
-UM_OF_WORKING_DAYS = 20
-MAX_HOURS_IN_MONTH = 100
-totalWorkingDays= 0
-totalEmpHours= 0
-totalEmpWage = 0
 
 
 def empFullDayWage():
@@ -79,19 +74,35 @@ def empwageCalculate(randomCheck):
     return switcher[randomCheck]
 
 
-while (totalEmpHours < MAX_HOURS_IN_MONTH and totalWorkingDays < NUM_OF_WORKING_DAYS):
-    # totalWorkingDays += 1
-    empCheck = random.randint(0, 1)
-    employeeWage = empPresentyCheck(empCheck)
-    if empCheck == 0:
-        employeeWage
-    else:
-        employeeWage[0]
-        employeeWage[1]
-        totalEmpWage += employeeWage[1]
-        totalEmpHours += employeeWage[2]
-        totalWorkingDays += 1
+def totalWorkingHours():
+    """
+            Description:
+                Calculating total working hours.
+            Parameter:
+                None
+            Return:
+                return total working hours in month
+    """
 
-print("Total employee wage for {} days is {}".format(totalWorkingDays,totalEmpWage))
-print("Total employee hours in {} days are {}".format(totalWorkingDays,totalEmpHours))
-print("Total working days are",totalWorkingDays)
+    totalWorkingDays = 0
+    totalEmpHours = 0
+    totalEmpWage = 0
+    NUM_OF_WORKING_DAYS = 20
+    MAX_HOURS_IN_MONTH = 100
+
+    while (totalEmpHours < MAX_HOURS_IN_MONTH and totalWorkingDays < NUM_OF_WORKING_DAYS):
+        empCheck = random.randint(0, 1)
+        employeeWage = empPresentyCheck(empCheck)
+        if empCheck == 0:
+            employeeWage
+        else:
+            employeeWage[0]
+            employeeWage[1]
+            totalEmpWage += employeeWage[1]
+            totalEmpHours += employeeWage[2]
+            totalWorkingDays += 1
+    print("Total working days is", totalWorkingDays)
+    print("Total employee wage for {} days is {}".format(totalWorkingDays, totalEmpWage))
+    return totalEmpHours
+
+print("Total Employee working Hours in a month is", totalWorkingHours())
